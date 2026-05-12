@@ -1,0 +1,105 @@
+site_name: Guida di Studio - Informatica Avanzata
+site_description: Guida completa agli argomenti di informatica avanzata
+site_author: Andrea
+site_url: https://yourusername.github.io/Guida-Studio-Informatica/
+
+theme:
+  name: material
+  language: it
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Passa alla modalità scura
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Passa alla modalità chiara
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+repo_name: yourusername/Guida-Studio-Informatica
+repo_url: https://github.com/yourusername/Guida-Studio-Informatica
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Computazione, Software, Sistemi:
+    - computazione-software-sistemi/index.md
+    - Algoritmi e Strutture Dati: computazione-software-sistemi/algoritmi-strutture-dati.md
+    - Architettura Elaboratori e SO: computazione-software-sistemi/architettura-elaboratori-so.md
+    - Paradigmi e Linguaggi: computazione-software-sistemi/paradigmi-linguaggi.md
+    - Caratteristiche del Software: computazione-software-sistemi/caratteristiche-software.md
+    - Ingegneria e Sicurezza: computazione-software-sistemi/ingegneria-sicurezza.md
+    - Basi di Dati: computazione-software-sistemi/basi-dati.md
+    - Reti e Protocolli: computazione-software-sistemi/reti-protocolli.md
+    - Sistemi Distribuiti e Cloud: computazione-software-sistemi/sistemi-distribuiti-cloud.md
+    - Architetture Applicative: computazione-software-sistemi/architetture-applicative.md
+  - Crittografia, DLT, Privacy:
+    - crittografia-dlt-privacy/index.md
+    - Cifratura e Firma Digitale: crittografia-dlt-privacy/cifratura-firma-digitale.md
+    - Architetture DLT: crittografia-dlt-privacy/architetture-dlt.md
+    - Smart Contracts: crittografia-dlt-privacy/smart-contracts.md
+    - Scalabilità DLT: crittografia-dlt-privacy/scalabilita-dlt.md
+    - Privacy-Enhancing Technologies: crittografia-dlt-privacy/privacy-enhancing.md
+    - Interoperabilità: crittografia-dlt-privacy/interoperabilita.md
+    - Crittografia Post-Quantum: crittografia-dlt-privacy/post-quantum.md
+  - Intelligenza Artificiale, ML, Data Science:
+    - intelligenza-artificiale-ml-datascience/index.md
+    - Tipi di IA: intelligenza-artificiale-ml-datascience/tipi-ia.md
+    - Rappresentazione Conoscenza: intelligenza-artificiale-ml-datascience/rappresentazione-conoscenza.md
+    - Agenti e Sistemi Multiagente: intelligenza-artificiale-ml-datascience/agenti-multiagente.md
+    - Problemi ML: intelligenza-artificiale-ml-datascience/problemi-ml.md
+    - Tipi di Machine Learning: intelligenza-artificiale-ml-datascience/tipi-ml.md
+    - Reti Neurali e Deep Learning: intelligenza-artificiale-ml-datascience/reti-neurali-deep-learning.md
+    - Foundation Models e LLM: intelligenza-artificiale-ml-datascience/foundation-models-llm.md
+    - Big Data: intelligenza-artificiale-ml-datascience/big-data.md
+    - Data Mining e Visualization: intelligenza-artificiale-ml-datascience/data-mining-visualization.md
+
+plugins:
+  - search:
+      lang: it
+
+# Made with Bob
