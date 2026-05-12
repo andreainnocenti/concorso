@@ -4,7 +4,7 @@ Una guida completa e strutturata per lo studio degli argomenti di informatica av
 
 ## 🌐 Sito Web
 
-La guida è disponibile online su GitHub Pages: **[Visualizza la Guida](https://yourusername.github.io/concorso/)**
+La guida è disponibile online su GitHub Pages: **[Visualizza la Guida](https://andreainnocenti.github.io/concorso/)**
 
 ## 📖 Contenuti
 
@@ -50,7 +50,7 @@ La guida è disponibile online su GitHub Pages: **[Visualizza la Guida](https://
 
 ```bash
 # Clona il repository
-git clone https://github.com/yourusername/concorso.git
+git clone https://github.com/andreainnocenti/concorso.git
 cd concorso
 
 # Installa le dipendenze
@@ -118,7 +118,7 @@ Questa guida è stata creata come risorsa di studio per argomenti di informatica
 
 ## 📧 Contatti
 
-Per domande o suggerimenti, apri una [issue](https://github.com/yourusername/concorso/issues) su GitHub.
+Per domande o suggerimenti, apri una [issue](https://github.com/andreainnocenti/concorso/issues) su GitHub.
 
 ---
 
