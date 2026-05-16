@@ -1,0 +1,2853 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida completa agli argomenti di informatica avanzata">
+      
+      
+        <meta name="author" content="Andrea">
+      
+      
+        <link rel="canonical" href="https://yourusername.github.io/Guida-Studio-Informatica/approfondimenti/algoritmi-approfondimento-parte1/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Algoritmi - Parte 1 - Guida di Studio - Informatica Avanzata</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algoritmi-e-strutture-dati-approfondimento-per-esame-orale" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida di Studio - Informatica Avanzata" class="md-header__button md-logo" aria-label="Guida di Studio - Informatica Avanzata" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida di Studio - Informatica Avanzata
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algoritmi - Parte 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passa alla modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passa alla modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passa alla modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passa alla modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yourusername/Guida-Studio-Informatica" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yourusername/Guida-Studio-Informatica
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../computazione-software-sistemi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computazione, Software, Sistemi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../crittografia-dlt-privacy/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Crittografia, DLT, Privacy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../intelligenza-artificiale-ml-datascience/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Intelligenza Artificiale, ML, Data Science
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📖 Approfondimenti per Esame
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida di Studio - Informatica Avanzata" class="md-nav__button md-logo" aria-label="Guida di Studio - Informatica Avanzata" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Guida di Studio - Informatica Avanzata
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yourusername/Guida-Studio-Informatica" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yourusername/Guida-Studio-Informatica
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../computazione-software-sistemi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computazione, Software, Sistemi
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computazione, Software, Sistemi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/algoritmi-strutture-dati/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmi e Strutture Dati
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/architettura-elaboratori-so/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architettura Elaboratori e SO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/paradigmi-linguaggi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paradigmi e Linguaggi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/caratteristiche-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caratteristiche del Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/ingegneria-sicurezza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingegneria e Sicurezza
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/basi-dati/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basi di Dati
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/reti-protocolli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reti e Protocolli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/sistemi-distribuiti-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemi Distribuiti e Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computazione-software-sistemi/architetture-applicative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architetture Applicative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../crittografia-dlt-privacy/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crittografia, DLT, Privacy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Crittografia, DLT, Privacy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crittografia-dlt-privacy/cifratura-firma-digitale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cifratura e Firma Digitale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crittografia-dlt-privacy/architetture-dlt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architetture DLT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crittografia-dlt-privacy/smart-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smart Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crittografia-dlt-privacy/scalabilita-dlt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scalabilità DLT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crittografia-dlt-privacy/privacy-enhancing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy-Enhancing Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crittografia-dlt-privacy/interoperabilita/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interoperabilità
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crittografia-dlt-privacy/post-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crittografia Post-Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../intelligenza-artificiale-ml-datascience/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intelligenza Artificiale, ML, Data Science
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intelligenza Artificiale, ML, Data Science
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/tipi-ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipi di IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/rappresentazione-conoscenza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rappresentazione Conoscenza
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/agenti-multiagente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agenti e Sistemi Multiagente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/problemi-ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problemi ML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/tipi-ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipi di Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/reti-neurali-deep-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reti Neurali e Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/foundation-models-llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation Models e LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/big-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Big Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligenza-artificiale-ml-datascience/data-mining-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Mining e Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 Approfondimenti per Esame
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📖 Approfondimenti per Esame
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmi - Parte 1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmi - Parte 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guida-completa-per-lesposizione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Guida Completa per l'Esposizione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-introduzione-e-contesto-storico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 PARTE 1: INTRODUZIONE E CONTESTO STORICO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 PARTE 1: INTRODUZIONE E CONTESTO STORICO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-origini-del-concetto-di-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Origini del Concetto di Algoritmo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Origini del Concetto di Algoritmo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmi-nellantichita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algoritmi nell'Antichità
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evoluzione-nel-xx-secolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evoluzione nel XX Secolo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-definizione-formale-di-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Definizione Formale di Algoritmo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Definizione Formale di Algoritmo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-5-proprieta-fondamentali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le 5 Proprietà Fondamentali
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-algoritmo-vs-programma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Algoritmo vs Programma
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-analisi-della-complessita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 PARTE 2: ANALISI DELLA COMPLESSITÀ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 PARTE 2: ANALISI DELLA COMPLESSITÀ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-perche-studiare-la-complessita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Perché Studiare la Complessità?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-notazione-asintotica-teoria-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Notazione Asintotica: Teoria Completa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Notazione Asintotica: Teoria Completa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#big-o-o-limite-superiore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Big-O (O): Limite Superiore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omega-limite-inferiore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Omega (Ω): Limite Inferiore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theta-limite-stretto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theta (Θ): Limite Stretto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-classi-di-complessita-analisi-dettagliata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Classi di Complessità: Analisi Dettagliata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Classi di Complessità: Analisi Dettagliata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o1-costante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(1) - Costante
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#olog-n-logaritmica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(log n) - Logaritmica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-lineare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(n) - Lineare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-log-n-linearitmica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(n log n) - Linearitmica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on2-quadratica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(n²) - Quadratica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o2n-esponenziale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(2ⁿ) - Esponenziale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-3-domande-tipiche-desame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 PARTE 3: DOMANDE TIPICHE D'ESAME
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 PARTE 3: DOMANDE TIPICHE D&#39;ESAME">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domanda-1-spiega-la-differenza-tra-o-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domanda 1: "Spiega la differenza tra O, Ω e Θ"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domanda-2-perche-lordinamento-basato-su-confronti-non-puo-essere-piu-veloce-di-on-log-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domanda 2: "Perché l'ordinamento basato su confronti non può essere più veloce di O(n log n)?"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domanda-3-quando-useresti-quick-sort-invece-di-merge-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domanda 3: "Quando useresti Quick Sort invece di Merge Sort?"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guida-completa-per-lesposizione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Guida Completa per l'Esposizione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-introduzione-e-contesto-storico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 PARTE 1: INTRODUZIONE E CONTESTO STORICO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 PARTE 1: INTRODUZIONE E CONTESTO STORICO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-origini-del-concetto-di-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Origini del Concetto di Algoritmo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Origini del Concetto di Algoritmo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmi-nellantichita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algoritmi nell'Antichità
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evoluzione-nel-xx-secolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evoluzione nel XX Secolo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-definizione-formale-di-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Definizione Formale di Algoritmo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Definizione Formale di Algoritmo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-5-proprieta-fondamentali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le 5 Proprietà Fondamentali
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-algoritmo-vs-programma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Algoritmo vs Programma
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-analisi-della-complessita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 PARTE 2: ANALISI DELLA COMPLESSITÀ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 PARTE 2: ANALISI DELLA COMPLESSITÀ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-perche-studiare-la-complessita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Perché Studiare la Complessità?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-notazione-asintotica-teoria-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Notazione Asintotica: Teoria Completa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Notazione Asintotica: Teoria Completa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#big-o-o-limite-superiore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Big-O (O): Limite Superiore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omega-limite-inferiore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Omega (Ω): Limite Inferiore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theta-limite-stretto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theta (Θ): Limite Stretto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-classi-di-complessita-analisi-dettagliata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Classi di Complessità: Analisi Dettagliata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Classi di Complessità: Analisi Dettagliata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o1-costante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(1) - Costante
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#olog-n-logaritmica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(log n) - Logaritmica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-lineare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(n) - Lineare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-log-n-linearitmica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(n log n) - Linearitmica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on2-quadratica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(n²) - Quadratica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o2n-esponenziale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O(2ⁿ) - Esponenziale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-3-domande-tipiche-desame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 PARTE 3: DOMANDE TIPICHE D'ESAME
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 PARTE 3: DOMANDE TIPICHE D&#39;ESAME">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domanda-1-spiega-la-differenza-tra-o-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domanda 1: "Spiega la differenza tra O, Ω e Θ"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domanda-2-perche-lordinamento-basato-su-confronti-non-puo-essere-piu-veloce-di-on-log-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domanda 2: "Perché l'ordinamento basato su confronti non può essere più veloce di O(n log n)?"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domanda-3-quando-useresti-quick-sort-invece-di-merge-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domanda 3: "Quando useresti Quick Sort invece di Merge Sort?"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="algoritmi-e-strutture-dati-approfondimento-per-esame-orale">Algoritmi e Strutture Dati - Approfondimento per Esame Orale<a class="headerlink" href="#algoritmi-e-strutture-dati-approfondimento-per-esame-orale" title="Permanent link">&para;</a></h1>
+<h2 id="guida-completa-per-lesposizione">📚 Guida Completa per l'Esposizione<a class="headerlink" href="#guida-completa-per-lesposizione" title="Permanent link">&para;</a></h2>
+<p>Questo documento fornisce un approfondimento dettagliato pensato per preparare un'esposizione orale completa sull'argomento "Algoritmi, Strutture Dati e Complessità". Include teoria, storia, esempi pratici e possibili domande d'esame.</p>
+<hr />
+<h2 id="parte-1-introduzione-e-contesto-storico">🎓 PARTE 1: INTRODUZIONE E CONTESTO STORICO<a class="headerlink" href="#parte-1-introduzione-e-contesto-storico" title="Permanent link">&para;</a></h2>
+<h3 id="11-origini-del-concetto-di-algoritmo">1.1 Origini del Concetto di Algoritmo<a class="headerlink" href="#11-origini-del-concetto-di-algoritmo" title="Permanent link">&para;</a></h3>
+<p>Il termine "algoritmo" ha radici antiche e affascinanti. Deriva dal nome del matematico persiano <strong>Muhammad ibn Musa al-Khwarizmi</strong> (780-850 d.C.), il cui nome latinizzato divenne "Algoritmi". Al-Khwarizmi scrisse il trattato "Al-Kitāb al-mukhtaṣar fī ḥisāb al-jabr wa-l-muqābala" (Il libro conciso sul calcolo per completamento e bilanciamento), da cui deriva anche il termine "algebra".</p>
+<p><strong>Perché è importante per l'esame</strong>: Dimostra che comprendi le radici storiche dell'informatica e puoi contestualizzare i concetti moderni.</p>
+<h4 id="algoritmi-nellantichita">Algoritmi nell'Antichità<a class="headerlink" href="#algoritmi-nellantichita" title="Permanent link">&para;</a></h4>
+<p><strong>Algoritmo di Euclide (300 a.C.)</strong>
+Il più antico algoritmo non banale ancora in uso. Calcola il Massimo Comun Divisore (MCD) di due numeri.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Procedimento:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1. Dati due numeri a e b (con a &gt; b)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Dividi a per b e ottieni il resto r
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>3. Se r = 0, allora MCD(a,b) = b
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>4. Altrimenti, ripeti con a = b e b = r
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Esempio: MCD(48, 18)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>48 = 18 × 2 + 12
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>18 = 12 × 1 + 6
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>12 = 6 × 2 + 0
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Quindi MCD(48, 18) = 6
+</code></pre></div>
+<p><strong>Perché è rilevante oggi</strong>: 
+- Usato in crittografia (RSA)
+- Esempio perfetto di algoritmo efficiente (O(log n))
+- Dimostra che algoritmi antichi possono essere ottimali</p>
+<h4 id="evoluzione-nel-xx-secolo">Evoluzione nel XX Secolo<a class="headerlink" href="#evoluzione-nel-xx-secolo" title="Permanent link">&para;</a></h4>
+<p><strong>Alan Turing (1936)</strong>: Introduce la Macchina di Turing, modello teorico di computazione che definisce cosa significa "computabile".</p>
+<p><strong>John von Neumann (1945)</strong>: Architettura von Neumann, base dei computer moderni, dove programmi e dati condividono la stessa memoria.</p>
+<p><strong>Donald Knuth (1968)</strong>: Pubblica "The Art of Computer Programming", sistematizzando lo studio degli algoritmi.</p>
+<h3 id="12-definizione-formale-di-algoritmo">1.2 Definizione Formale di Algoritmo<a class="headerlink" href="#12-definizione-formale-di-algoritmo" title="Permanent link">&para;</a></h3>
+<p>Un algoritmo è una <strong>sequenza finita, ordinata e non ambigua di istruzioni</strong> che, dato un input, produce un output in tempo finito.</p>
+<h4 id="le-5-proprieta-fondamentali">Le 5 Proprietà Fondamentali<a class="headerlink" href="#le-5-proprieta-fondamentali" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Finitezza</strong>: Deve terminare dopo un numero finito di passi</li>
+<li>Esempio: Un ciclo <code>while(true)</code> NON è un algoritmo</li>
+<li>
+<p>Controesempio: Calcolo di π con precisione infinita</p>
+</li>
+<li>
+<p><strong>Definitezza</strong>: Ogni passo deve essere definito precisamente</p>
+</li>
+<li>Esempio: "Dividi per 2" è definito</li>
+<li>
+<p>Controesempio: "Scegli un numero a caso" è ambiguo senza specificare la distribuzione</p>
+</li>
+<li>
+<p><strong>Input</strong>: Può ricevere zero o più input</p>
+</li>
+<li>Esempio con 0 input: Generatore di numeri casuali con seed fisso</li>
+<li>
+<p>Esempio con n input: Ordinamento di un array</p>
+</li>
+<li>
+<p><strong>Output</strong>: Produce almeno un output</p>
+</li>
+<li>
+<p>L'output può essere un valore di ritorno, una modifica dello stato, o un effetto collaterale</p>
+</li>
+<li>
+<p><strong>Efficacia</strong>: Ogni operazione deve essere sufficientemente basilare</p>
+</li>
+<li>Esempio: Addizione, confronto, assegnazione</li>
+<li>Controesempio: "Risolvi questo problema NP-completo" non è un'operazione basilare</li>
+</ol>
+<h3 id="13-algoritmo-vs-programma">1.3 Algoritmo vs Programma<a class="headerlink" href="#13-algoritmo-vs-programma" title="Permanent link">&para;</a></h3>
+<p><strong>Domanda tipica d'esame</strong>: "Qual è la differenza tra algoritmo e programma?"</p>
+<p><strong>Risposta articolata</strong>:
+- <strong>Algoritmo</strong>: Concetto astratto, indipendente dal linguaggio, descrive la logica di risoluzione
+- <strong>Programma</strong>: Implementazione concreta di un algoritmo in un linguaggio specifico</p>
+<p><strong>Analogia</strong>: L'algoritmo è come una ricetta di cucina (astratta), il programma è il piatto cucinato (concreto).</p>
+<p><strong>Esempio</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ALGORITMO (pseudocodice):
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Per ogni elemento nell&#39;array:
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    Se l&#39;elemento è maggiore del massimo corrente:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        Aggiorna il massimo
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>PROGRAMMA (Python):
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>def find_max(arr):
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    max_val = arr[0]
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    for num in arr:
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        if num &gt; max_val:
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            max_val = num
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    return max_val
+</code></pre></div></p>
+<hr />
+<h2 id="parte-2-analisi-della-complessita">🎓 PARTE 2: ANALISI DELLA COMPLESSITÀ<a class="headerlink" href="#parte-2-analisi-della-complessita" title="Permanent link">&para;</a></h2>
+<h3 id="21-perche-studiare-la-complessita">2.1 Perché Studiare la Complessità?<a class="headerlink" href="#21-perche-studiare-la-complessita" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario reale per l'esame</strong>:
+Immagina di dover ordinare 1 milione di record in un database. La differenza tra un algoritmo O(n²) e uno O(n log n) è:
+- O(n²): 1.000.000² = 1.000.000.000.000 operazioni (~ 11 giorni su un computer moderno)
+- O(n log n): 1.000.000 × 20 = 20.000.000 operazioni (~ 0.02 secondi)</p>
+<p><strong>Questo dimostra che la scelta dell'algoritmo può fare la differenza tra un sistema utilizzabile e uno inutilizzabile.</strong></p>
+<h3 id="22-notazione-asintotica-teoria-completa">2.2 Notazione Asintotica: Teoria Completa<a class="headerlink" href="#22-notazione-asintotica-teoria-completa" title="Permanent link">&para;</a></h3>
+<h4 id="big-o-o-limite-superiore">Big-O (O): Limite Superiore<a class="headerlink" href="#big-o-o-limite-superiore" title="Permanent link">&para;</a></h4>
+<p><strong>Definizione formale</strong>:
+f(n) = O(g(n)) se esistono costanti positive c e n₀ tali che:
+0 ≤ f(n) ≤ c·g(n) per ogni n ≥ n₀</p>
+<p><strong>Interpretazione</strong>: "f(n) cresce al massimo come g(n), a meno di costanti"</p>
+<p><strong>Esempio pratico</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>f(n) = 3n² + 5n + 2
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>È O(n²) perché:
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>3n² + 5n + 2 ≤ 3n² + 5n² + 2n² = 10n² per n ≥ 1
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Quindi c = 10, n₀ = 1
+</code></pre></div></p>
+<p><strong>Errori comuni da evitare</strong>:
+- ❌ "O(n) è meglio di O(1)" → Falso! O(1) è costante, sempre meglio
+- ❌ "O(2n) è diverso da O(n)" → Falso! Le costanti si ignorano
+- ❌ "O(n + m) = O(n)" → Falso! Se m può essere grande quanto n</p>
+<h4 id="omega-limite-inferiore">Omega (Ω): Limite Inferiore<a class="headerlink" href="#omega-limite-inferiore" title="Permanent link">&para;</a></h4>
+<p><strong>Definizione formale</strong>:
+f(n) = Ω(g(n)) se esistono costanti positive c e n₀ tali che:
+0 ≤ c·g(n) ≤ f(n) per ogni n ≥ n₀</p>
+<p><strong>Interpretazione</strong>: "f(n) cresce almeno come g(n)"</p>
+<p><strong>Uso pratico</strong>: Dimostrare che un problema richiede almeno un certo tempo.</p>
+<p><strong>Esempio</strong>: L'ordinamento basato su confronti è Ω(n log n) perché:
+- Ci sono n! possibili permutazioni
+- Un albero di decisione binario ha altezza minima log₂(n!) ≈ n log n
+- Quindi servono almeno n log n confronti nel caso peggiore</p>
+<h4 id="theta-limite-stretto">Theta (Θ): Limite Stretto<a class="headerlink" href="#theta-limite-stretto" title="Permanent link">&para;</a></h4>
+<p><strong>Definizione formale</strong>:
+f(n) = Θ(g(n)) se f(n) = O(g(n)) E f(n) = Ω(g(n))</p>
+<p><strong>Interpretazione</strong>: "f(n) cresce esattamente come g(n)"</p>
+<p><strong>Esempio</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>f(n) = 2n² + 3n + 1 è Θ(n²)
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Perché:
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>- È O(n²): 2n² + 3n + 1 ≤ 6n² per n ≥ 1
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>- È Ω(n²): 2n² + 3n + 1 ≥ 2n² per ogni n
+</code></pre></div></p>
+<h3 id="23-classi-di-complessita-analisi-dettagliata">2.3 Classi di Complessità: Analisi Dettagliata<a class="headerlink" href="#23-classi-di-complessita-analisi-dettagliata" title="Permanent link">&para;</a></h3>
+<h4 id="o1-costante">O(1) - Costante<a class="headerlink" href="#o1-costante" title="Permanent link">&para;</a></h4>
+<p><strong>Caratteristiche</strong>:
+- Tempo di esecuzione indipendente dalla dimensione dell'input
+- Ideale, ma raro per problemi complessi</p>
+<p><strong>Esempi reali</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Accesso array</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">elemento</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># O(1)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Operazioni aritmetiche</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">risultato</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># O(1)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Hash table lookup (caso medio)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">valore</span> <span class="o">=</span> <span class="n">dizionario</span><span class="p">[</span><span class="n">chiave</span><span class="p">]</span>  <span class="c1"># O(1) medio</span>
+</code></pre></div></p>
+<p><strong>Quando è possibile</strong>:
+- Accesso diretto tramite indice
+- Operazioni matematiche semplici
+- Lookup in hash table ben bilanciata</p>
+<p><strong>Limitazioni</strong>:
+- Non può risolvere problemi che richiedono esaminare tutti i dati
+- Esempio: Non puoi trovare il massimo in un array non ordinato in O(1)</p>
+<h4 id="olog-n-logaritmica">O(log n) - Logaritmica<a class="headerlink" href="#olog-n-logaritmica" title="Permanent link">&para;</a></h4>
+<p><strong>Caratteristiche</strong>:
+- Cresce molto lentamente
+- Tipica di algoritmi "divide et impera" che dimezzano il problema ad ogni passo</p>
+<p><strong>Perché è efficiente</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>n = 1.000.000 → log₂(n) ≈ 20
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>n = 1.000.000.000 → log₂(n) ≈ 30
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Anche con un miliardo di elementi, servono solo 30 operazioni!
+</code></pre></div></p>
+<p><strong>Esempi reali</strong>:</p>
+<ol>
+<li>
+<p><strong>Ricerca Binaria</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">    Cerca in array ordinato dimezzando lo spazio ad ogni passo</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">:</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>            <span class="k">return</span> <span class="n">mid</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Elimina metà sinistra</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>            <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># Elimina metà destra</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="c1"># Analisi:</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="c1"># Iterazione 1: n elementi</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="c1"># Iterazione 2: n/2 elementi</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="c1"># Iterazione 3: n/4 elementi</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="c1"># ...</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="c1"># Iterazione k: n/2^k elementi</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="c1"># Termina quando n/2^k = 1, quindi k = log₂(n)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Alberi Binari Bilanciati</strong>:</p>
+</li>
+<li>Altezza = O(log n)</li>
+<li>
+<p>Ricerca, inserimento, cancellazione: O(log n)</p>
+</li>
+<li>
+<p><strong>Algoritmi su Heap</strong>:</p>
+</li>
+<li>Insert: O(log n)</li>
+<li>Extract-min/max: O(log n)</li>
+</ol>
+<p><strong>Applicazioni pratiche</strong>:
+- Database con indici B-tree
+- Ricerca in dizionari ordinati
+- Sistemi di file gerarchici</p>
+<h4 id="on-lineare">O(n) - Lineare<a class="headerlink" href="#on-lineare" title="Permanent link">&para;</a></h4>
+<p><strong>Caratteristiche</strong>:
+- Tempo proporzionale alla dimensione dell'input
+- Spesso inevitabile quando devi esaminare tutti i dati</p>
+<p><strong>Esempi reali</strong>:</p>
+<ol>
+<li>
+<p><strong>Ricerca Lineare</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">linear_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="sd">    Deve controllare ogni elemento nel caso peggiore</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="k">if</span> <span class="n">element</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>            <span class="k">return</span> <span class="n">i</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Somma di un Array</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">sum_array</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="sd">    Deve visitare ogni elemento</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">return</span> <span class="n">total</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Copia di una Struttura Dati</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">copy_list</span><span class="p">(</span><span class="n">original</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="sd">    Deve copiare ogni elemento</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">original</span><span class="p">]</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Quando è ottimale</strong>:
+- Quando devi processare ogni elemento almeno una volta
+- Esempio: Calcolare la media richiede vedere tutti i numeri</p>
+<p><strong>Limite inferiore</strong>:
+Molti problemi hanno limite inferiore Ω(n):
+- Trovare il massimo: devi vedere tutti gli elementi
+- Verificare se un array contiene duplicati: devi vedere tutti (caso peggiore)</p>
+<h4 id="on-log-n-linearitmica">O(n log n) - Linearitmica<a class="headerlink" href="#on-log-n-linearitmica" title="Permanent link">&para;</a></h4>
+<p><strong>Caratteristiche</strong>:
+- Tipica dei migliori algoritmi di ordinamento
+- Limite inferiore teorico per ordinamento basato su confronti</p>
+<p><strong>Perché n log n è il limite per l'ordinamento?</strong></p>
+<p><strong>Dimostrazione con albero di decisione</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Per ordinare n elementi:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>- Ci sono n! possibili permutazioni (output possibili)
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>- Un albero di decisione binario con n! foglie ha altezza minima log₂(n!)
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>- log₂(n!) = log₂(n × (n-1) × ... × 1) ≈ n log₂(n) per la formula di Stirling
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>- Quindi servono almeno n log n confronti
+</code></pre></div></p>
+<p><strong>Algoritmi O(n log n)</strong>:</p>
+<ol>
+<li>
+<p><strong>Merge Sort</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        <span class="k">return</span> <span class="n">arr</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">left</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">[:</span><span class="n">mid</span><span class="p">])</span>   <span class="c1"># T(n/2)</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">:])</span>  <span class="c1"># T(n/2)</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>      <span class="c1"># O(n)</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="c1"># Equazione di ricorrenza:</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="c1"># T(n) = 2T(n/2) + O(n)</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="c1"># Soluzione: T(n) = O(n log n) per il Master Theorem</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Quick Sort (caso medio)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">quick_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>        <span class="k">return</span> <span class="n">arr</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">left</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">]</span>    <span class="c1"># O(n)</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="n">middle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="n">right</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="k">return</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="c1"># Caso medio: pivot divide circa a metà</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="c1"># T(n) = 2T(n/2) + O(n) = O(n log n)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Heap Sort</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">heap_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="c1"># Build heap: O(n)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="c1"># Extract n volte: n × O(log n)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        <span class="n">sift_down</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="k">return</span> <span class="n">arr</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1"># Totale: O(n) + O(n log n) = O(n log n)</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Applicazioni pratiche</strong>:
+- Ordinamento di grandi dataset
+- Algoritmi di compressione (Huffman coding)
+- Algoritmi su grafi (alcuni casi)</p>
+<h4 id="on2-quadratica">O(n²) - Quadratica<a class="headerlink" href="#on2-quadratica" title="Permanent link">&para;</a></h4>
+<p><strong>Caratteristiche</strong>:
+- Tempo cresce con il quadrato dell'input
+- Accettabile per piccoli input (n &lt; 1000)
+- Problematico per grandi dataset</p>
+<p><strong>Quando si verifica</strong>:
+- Cicli annidati che iterano su n elementi
+- Confronto di ogni elemento con ogni altro</p>
+<p><strong>Esempi reali</strong>:</p>
+<ol>
+<li>
+<p><strong>Bubble Sort</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>           <span class="c1"># n iterazioni</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># n iterazioni (medio)</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>                <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="k">return</span> <span class="n">arr</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="c1"># Analisi:</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="c1"># Iterazione esterna: n volte</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="c1"># Iterazione interna: (n-1) + (n-2) + ... + 1 = n(n-1)/2 ≈ n²/2</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="c1"># Totale: O(n²)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Selection Sort</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">selection_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        <span class="n">min_idx</span> <span class="o">=</span> <span class="n">i</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>  <span class="c1"># Trova minimo</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]:</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>                <span class="n">min_idx</span> <span class="o">=</span> <span class="n">j</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">min_idx</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    <span class="k">return</span> <span class="n">arr</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Verifica Duplicati (Naive)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">has_duplicates_naive</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>                <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1"># Versione O(n) con set:</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">has_duplicates_optimal</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Impatto pratico</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>n = 100:    10.000 operazioni      → 0.01 ms
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>n = 1.000:  1.000.000 operazioni   → 1 ms
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>n = 10.000: 100.000.000 operazioni → 100 ms
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>n = 100.000: 10.000.000.000 ops    → 10 secondi!
+</code></pre></div></p>
+<p><strong>Quando è accettabile</strong>:
+- Input piccoli (n &lt; 100)
+- Semplicità del codice è prioritaria
+- Insertion Sort per array quasi ordinati</p>
+<h4 id="o2n-esponenziale">O(2ⁿ) - Esponenziale<a class="headerlink" href="#o2n-esponenziale" title="Permanent link">&para;</a></h4>
+<p><strong>Caratteristiche</strong>:
+- Cresce estremamente rapidamente
+- Diventa intrattabile anche per n moderati
+- Tipica di algoritmi che esplorano tutte le possibilità</p>
+<p><strong>Impatto drammatico</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>n = 10:  1.024 operazioni        → Istantaneo
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>n = 20:  1.048.576 operazioni    → Veloce
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>n = 30:  1.073.741.824 ops       → 1 secondo
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>n = 40:  1.099.511.627.776 ops   → 18 minuti
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>n = 50:  1.125.899.906.842.624   → 13 giorni!
+</code></pre></div></p>
+<p><strong>Esempi reali</strong>:</p>
+<ol>
+<li>
+<p><strong>Fibonacci Ricorsivo Naive</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>        <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="k">return</span> <span class="n">fibonacci_recursive</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci_recursive</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1"># Albero di ricorsione:</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1">#           fib(5)</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="c1">#          /      \</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c1">#      fib(4)    fib(3)</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="c1">#      /    \    /    \</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="c1">#   fib(3) fib(2) ...</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="c1">#</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="c1"># Numero di chiamate: 2^n (approssimato)</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="c1"># fib(40) richiede 2^40 ≈ 1 trilione di chiamate!</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Subset Sum (Brute Force)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">subset_sum_bruteforce</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="sd">    Trova se esiste un sottoinsieme che somma a target</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="sd">    Prova tutti i 2^n sottoinsiemi possibili</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">):</span>  <span class="c1"># 2^n iterazioni</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>        <span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>            <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Torre di Hanoi</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">auxiliary</span><span class="p">):</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Move disk 1 from </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>        <span class="k">return</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">auxiliary</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Move disk </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">auxiliary</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="c1"># Numero di mosse: 2^n - 1</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="c1"># Con 64 dischi: 2^64 - 1 ≈ 18 quintilioni di mosse</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="c1"># A 1 mossa/secondo: 585 miliardi di anni!</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Quando si incontra</strong>:
+- Problemi NP-completi risolti con brute force
+- Backtracking senza pruning
+- Generazione di tutte le combinazioni</p>
+<p><strong>Come migliorare</strong>:
+- Programmazione dinamica (Fibonacci: O(2ⁿ) → O(n))
+- Memoization
+- Algoritmi greedy (se applicabili)
+- Algoritmi approssimati</p>
+<hr />
+<h2 id="parte-3-domande-tipiche-desame">🎓 PARTE 3: DOMANDE TIPICHE D'ESAME<a class="headerlink" href="#parte-3-domande-tipiche-desame" title="Permanent link">&para;</a></h2>
+<h3 id="domanda-1-spiega-la-differenza-tra-o-e">Domanda 1: "Spiega la differenza tra O, Ω e Θ"<a class="headerlink" href="#domanda-1-spiega-la-differenza-tra-o-e" title="Permanent link">&para;</a></h3>
+<p><strong>Risposta strutturata</strong>:</p>
+<p>"Le tre notazioni descrivono diversi aspetti della complessità:</p>
+<ul>
+<li>
+<p><strong>Big-O (O)</strong> fornisce un <strong>limite superiore</strong>: indica che l'algoritmo non può essere peggiore di quella complessità. È la più usata perché ci interessa il caso peggiore.</p>
+</li>
+<li>
+<p><strong>Omega (Ω)</strong> fornisce un <strong>limite inferiore</strong>: indica che l'algoritmo richiede almeno quella complessità. Utile per dimostrare che un problema è intrinsecamente difficile.</p>
+</li>
+<li>
+<p><strong>Theta (Θ)</strong> fornisce un <strong>limite stretto</strong>: indica che l'algoritmo ha esattamente quella complessità, sia come limite superiore che inferiore.</p>
+</li>
+</ul>
+<p><strong>Esempio pratico</strong>: La ricerca lineare in un array non ordinato:
+- È O(n): nel caso peggiore scorre tutto l'array
+- È Ω(1): nel caso migliore trova subito l'elemento
+- NON è Θ(n) perché i casi migliore e peggiore differiscono</p>
+<p>Mentre la ricerca binaria in un array ordinato:
+- È O(log n)
+- È Ω(log n)
+- È Θ(log n): ha sempre complessità logaritmica"</p>
+<h3 id="domanda-2-perche-lordinamento-basato-su-confronti-non-puo-essere-piu-veloce-di-on-log-n">Domanda 2: "Perché l'ordinamento basato su confronti non può essere più veloce di O(n log n)?"<a class="headerlink" href="#domanda-2-perche-lordinamento-basato-su-confronti-non-puo-essere-piu-veloce-di-on-log-n" title="Permanent link">&para;</a></h3>
+<p><strong>Risposta articolata</strong>:</p>
+<p>"Questa è una domanda di teoria della complessità fondamentale. La dimostrazione usa il concetto di <strong>albero di decisione</strong>:</p>
+<ol>
+<li>
+<p><strong>Setup</strong>: Per ordinare n elementi, esistono n! possibili permutazioni (output possibili)</p>
+</li>
+<li>
+<p><strong>Albero di decisione</strong>: Ogni algoritmo basato su confronti può essere rappresentato come un albero binario dove:</p>
+</li>
+<li>Ogni nodo interno è un confronto (a &lt; b?)</li>
+<li>
+<p>Ogni foglia è un output (una permutazione ordinata)</p>
+</li>
+<li>
+<p><strong>Altezza minima</strong>: Un albero binario con n! foglie ha altezza minima log₂(n!)</p>
+</li>
+<li>
+<p><strong>Formula di Stirling</strong>: log₂(n!) ≈ n log₂(n) - n log₂(e) ≈ n log₂(n)</p>
+</li>
+<li>
+<p><strong>Conclusione</strong>: Servono almeno n log n confronti nel caso peggiore</p>
+</li>
+</ol>
+<p><strong>Implicazioni pratiche</strong>:
+- Merge Sort, Quick Sort (medio), Heap Sort sono ottimali asintoticamente
+- Per fare meglio, serve informazione extra (es: Counting Sort con range limitato)
+- Questo è un esempio di <strong>limite inferiore</strong> per una classe di problemi"</p>
+<h3 id="domanda-3-quando-useresti-quick-sort-invece-di-merge-sort">Domanda 3: "Quando useresti Quick Sort invece di Merge Sort?"<a class="headerlink" href="#domanda-3-quando-useresti-quick-sort-invece-di-merge-sort" title="Permanent link">&para;</a></h3>
+<p><strong>Risposta comparativa</strong>:</p>
+<p>"La scelta dipende da vari fattori:</p>
+<p><strong>Quick Sort è preferibile quando</strong>:
+- Memoria limitata (in-place, O(log n) stack vs O(n) di Merge Sort)
+- Dati casuali (caso medio O(n log n) molto veloce in pratica)
+- Cache performance importante (più cache-friendly)
+- Implementazione più semplice</p>
+<p><strong>Merge Sort è preferibile quando</strong>:
+- Serve garanzia O(n log n) anche nel caso peggiore
+- Stabilità richiesta (mantiene ordine relativo di elementi uguali)
+- Ordinamento di linked list (non richiede accesso casuale)
+- Parallelizzazione (più facile da parallelizzare)</p>
+<p><strong>Esempio pratico</strong>:
+- Java usa Quick Sort per tipi primitivi (int, double) dove stabilità non serve
+- Java usa Merge Sort (TimSort) per oggetti dove stabilità è importante
+- Python usa TimSort (variante di Merge Sort) come default</p>
+<p><strong>Ottimizzazione ibrida</strong>:
+Molte implementazioni moderne usano:
+- Quick Sort per grandi partizioni
+- Insertion Sort per piccole partizioni (&lt; 10 elementi)
+- Mediana-di-tre per scegliere il pivot"</p>
+<hr />
+<p><em>Continua nella Parte 2...</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Piede" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Precedente: 📖 Approfondimenti per Esame Orale">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Precedente
+              </span>
+              <div class="md-ellipsis">
+                📖 Approfondimenti per Esame Orale
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
