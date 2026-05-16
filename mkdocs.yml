@@ -97,6 +97,9 @@ nav:
     - Foundation Models e LLM: intelligenza-artificiale-ml-datascience/foundation-models-llm.md
     - Big Data: intelligenza-artificiale-ml-datascience/big-data.md
     - Data Mining e Visualization: intelligenza-artificiale-ml-datascience/data-mining-visualization.md
+  - 📖 Approfondimenti per Esame:
+    - approfondimenti/index.md
+    - Algoritmi - Parte 1: approfondimenti/algoritmi-approfondimento-parte1.md
 
 plugins:
   - search:
