@@ -1,7 +1,7 @@
 site_name: Guida di Studio - Informatica Avanzata
 site_description: Guida completa agli argomenti di informatica avanzata
 site_author: Andrea
-site_url: https://yourusername.github.io/Guida-Studio-Informatica/
+site_url: https://andreainnocenti.github.io/concorso/
 
 theme:
   name: material
@@ -35,13 +35,13 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-repo_name: yourusername/Guida-Studio-Informatica
-repo_url: https://github.com/yourusername/Guida-Studio-Informatica
+repo_name: andreainnocenti/concorso
+repo_url: https://github.com/andreainnocenti/concorso
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername
+      link: https://github.com/andreainnocenti
 
 markdown_extensions:
   - pymdownx.highlight:
