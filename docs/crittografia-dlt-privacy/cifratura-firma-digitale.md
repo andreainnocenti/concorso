@@ -331,4 +331,4 @@ Esempio: bcrypt con 12 rounds richiede ~0.3 secondi per hash, rendendo impratica
 
 - **Successivo:** [Architetture DLT e Blockchain](architetture-dlt.md)
 - **Correlato:** [Smart Contracts](smart-contracts.md)
-- **Correlato:** [Privacy e Anonimato](privacy-anonimato.md)
+- **Correlato:** [Privacy Enhancing Technologies](privacy-enhancing.md)
